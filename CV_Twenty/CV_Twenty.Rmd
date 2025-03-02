@@ -2,23 +2,29 @@
 name: Hongsun
 surname: Kim
 position: "Clinical Fellow"
-pronouns: he/his/him
-address: "Cardiovascular Surgery Department, Mayo Clinic, Rochester, MN"
+#pronouns: he/his/him
+address: "Department of Cardiovascular Surgery, Mayo Clinic, Rochester, MN"
 profilepic: "Hongsun Kim.jpg"
 phone: +1 213 563 1989
-orcid: 0000-0002-1879-4553
+linkedin: "hongsun-kim"
 email: "kim.hongsun@mayo.edu, yoursunny@gmail.com"
-#linkedin: "mariecurie"
-
-
+researchgate: "Hongsun-Kim-2"
+orcid: 0000-0002-1879-4553
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "Cardiovascular surgeon"
+aboutme: "Cardiovascular surgeon. Interest in Aortic surgery & Thoracic transplantation"
 output: vitae::twentyseconds
+latex_engine: xelatex
+#header-includes:
+#  - \usepackage{fontawesome5}
+#output:
+  #vitae::awesomecv:
+  #  page_total: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae)
+library(readr)
 ```
 
 
@@ -42,7 +48,7 @@ tribble(
   ~ Institution, ~ Year, ~ Where, ~ Position,
   "Samsung Medical Center","2012-2013","Seoul, Korea", "Intern",
   "Samsung Medical Center","2013-2017","Seoul, Korea", "Resident, Department of Thoracic and Cardiovascular Surgery",
-  "Masan National Tubersulosis Hospital","2017-2020","Seoul, Korea", "Public Health Physician",
+  "Masan National Tuberculosis Hospital","2017-2020","Seoul, Korea", "Public Health Physician",
   "Samsung Medical Center","2020-2023.2","Seoul, Korea", "Cliical Fellow, Division of Cardiovascular Surgery",
   "Samsung Medical Center","2023.2-2023.7","Seoul, Korea", "Cliical Professor, Division of Cardiovascular Surgery",
   "Mayo Clinic","2023.7-","MN, USA", "Cliical Fellow, Cardiovascular Surgery"
@@ -71,6 +77,6 @@ library(dplyr)
 #knitr::write_bib(c("vitae", "tibble"), "packages.bib")
 
 bibliography_entries("my_publications.bib") %>%
-  arrange(desc(author$family), issued)
+  arrange(desc(issued),desc(author$family))
 ```
 

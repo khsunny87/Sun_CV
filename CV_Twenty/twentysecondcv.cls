@@ -13,7 +13,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{tikz}
-\RequirePackage{fontawesome}
+\RequirePackage{fontawesome5}
 \RequirePackage{xcolor}
 \RequirePackage[absolute,overlay]{textpos}
 \RequirePackage{ragged2e}
@@ -26,7 +26,6 @@
 \RequirePackage[left=7.6cm,top=0.1cm,right=1cm,bottom=0.1cm,nohead,nofoot]{geometry}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
-
 
 %----------------------------------------------------------------------------------------
 %	 COLOURS
@@ -160,17 +159,17 @@
 
 		\renewcommand{\arraystretch}{1.6}
 		\begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
-			\ifthenelse{\equal{\cvaddress}{}}{}{\Large\faicon{map-marker} & \cvaddress\\}
-			\ifthenelse{\equal{\cvpronouns}{}}{}{\Large\faicon{comment} & \cvpronouns\\}
-			\ifthenelse{\equal{\cvnumberphone}{}}{}{\Large\faicon{phone} & \cvnumberphone\\}
-			\ifthenelse{\equal{\cvsite}{}}{}{\Large\faicon{home} & \cvsite\\}
-			\ifthenelse{\equal{\cvmail}{}}{}{\Large\faicon{envelope} & \cvmail\\}
-			\ifthenelse{\equal{\cvtwitter}{}}{}{\Large\faicon{twitter} & \cvtwitter\\}
-			\ifthenelse{\equal{\cvgithub}{}}{}{\Large\faicon{github} & \cvgithub\\}
-			\ifthenelse{\equal{\cvlinkedin}{}}{}{\Large\faicon{linkedin} & \cvlinkedin}
-			\ifthenelse{\equal{\cvorcid}{}}{}{\Large\faicon{orcid} & \cvorcid}
-			\ifthenelse{\equal{\cvscholar}{}}{}{\Large\faicon{google} & \cvscholar}
-			\ifthenelse{\equal{\cvresearchgate}{}}{}{\Large\faicon{researchgate} & \cvresearchgate}
+			\ifthenelse{\equal{\cvaddress}{}}{}{\Large\faIcon{map-marker} & \cvaddress\\}
+			\ifthenelse{\equal{\cvpronouns}{}}{}{\Large\faIcon{comment} & \cvpronouns\\}
+			\ifthenelse{\equal{\cvnumberphone}{}}{}{\Large\faIcon{phone} & \cvnumberphone\\}
+			\ifthenelse{\equal{\cvsite}{}}{}{\Large\faIcon{home} & \cvsite\\}
+			\ifthenelse{\equal{\cvmail}{}}{}{\Large\faIcon{envelope} & \cvmail\\}
+			\ifthenelse{\equal{\cvtwitter}{}}{}{\Large\faIcon{twitter} & \cvtwitter\\}
+			\ifthenelse{\equal{\cvgithub}{}}{}{\Large\faIcon{github} & \cvgithub\\}
+			\ifthenelse{\equal{\cvlinkedin}{}}{}{\Large\faIcon{linkedin} & \cvlinkedin\\}
+			\ifthenelse{\equal{\cvscholar}{}}{}{\Large\faIcon{google} & \cvscholar\\}
+			\ifthenelse{\equal{\cvresearchgate}{}}{}{\Large\faIcon{researchgate} & \cvresearchgate\\}
+			\ifthenelse{\equal{\cvorcid}{}}{}{\Large\faIcon{orcid} & \cvorcid\\}
 		\end{tabular}
 
 		%------------------------------------------------
@@ -179,7 +178,6 @@
 			\profilesection{About me}
 			\begin{flushleft}
 				\aboutme
-
 			\end{flushleft}
 		}
 
