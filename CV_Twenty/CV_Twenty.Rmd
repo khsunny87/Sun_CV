@@ -32,41 +32,24 @@ library(readr)
 
 ```{r}
 library(tibble)
-tribble(
-  ~ Degree, ~ Year, ~ Institution, ~ Where,
-  "Medical Doctor", "2006-2012", "College of Medicine, Sungkyunkwan University", "Seoul, Korea",
-  "Statistics and Data Science", "2018-", "Korean National Open University", "",
-  "Master of Medicine", "2015-2023", "Graduate School of Sungkyunkwan University", "Seoul, Korea"
-) %>% 
+read_csv("Input/education.csv") %>% 
   detailed_entries(Institution, Year, Where, Degree)
 ```
 
 # Work Experience
 
 ```{r}
-tribble(
-  ~ Institution, ~ Year, ~ Where, ~ Position,
-  "Samsung Medical Center","2012-2013","Seoul, Korea", "Intern",
-  "Samsung Medical Center","2013-2017","Seoul, Korea", "Resident, Department of Thoracic and Cardiovascular Surgery",
-  "Masan National Tuberculosis Hospital","2017-2020","Seoul, Korea", "Public Health Physician",
-  "Samsung Medical Center","2020-2023.2","Seoul, Korea", "Cliical Fellow, Division of Cardiovascular Surgery",
-  "Samsung Medical Center","2023.2-2023.7","Seoul, Korea", "Cliical Professor, Division of Cardiovascular Surgery",
-  "Mayo Clinic","2023.7-","MN, USA", "Cliical Fellow, Cardiovascular Surgery"
-) %>% 
+read_csv("Input/experience.csv") %>% 
   detailed_entries(Institution, Year, Where, Position)
 ```
 
 # Presentations
 ```{r}
-tribble(
-  ~Year, ~Title, ~Desc,
-  "2022.10", "Repair Versus Replacement in Active Native Mitral Valve Endocarditis: A Propensity Score-Matched Study", "The 36th European Association for Cardio-Thoracic Surgery Annual Meeting, October 2022, Milan, Italy",
-  "2024.4", "Impact of the Grade and Jet Direction of Residual Aortic Regurgitation following Valve-sparing Root Replacement","The 104th American Association for Thoracic Surgery Annual Meeting, April 2024, Toronto, Canada"
-) %>%
+read_csv("Input/presentation.csv") %>% 
   brief_entries(
     Title,
     Year,
-    Desc
+    Conference
   )
 ```
 
