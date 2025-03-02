@@ -12,11 +12,13 @@ email: "kim.hongsun@mayo.edu, yoursunny@gmail.com"
 researchgate: "Hongsun-Kim-2"
 orcid: 0000-0002-1879-4553
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "Cardiac Surgeon & Researcher. \newline dumb \newline Interest in Aortic surgery & Thoracic transplantation"
-#output: vitae::twentyseconds
-
-output: vitae::moderncv
+aboutme: "Cardiac Surgeon & Researcher
+Interest in Aortic surgery & Thoracic transplantation"
 latex_engine: xelatex
+
+output: vitae::twentyseconds
+
+#output: vitae::moderncv
 #header-includes:
 #  - \usepackage{fontawesome5}
 #output:
