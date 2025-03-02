@@ -15,21 +15,25 @@ date: "`r format(Sys.time(), '%B %Y')`"
 aboutme: "Cardiac Surgeon & Researcher Interest in Aortic surgery & Thoracic transplantation"
 latex_engine: xelatex
 csl: "../apa-cv.csl"
-biblography: "../Input/my_publications.bib"
+#biblography: "../Input/my_publications_test.bib"
 output:
+  #vitae::awesomecv:
   vitae::twentyseconds:
     keep_tex: true
-    pandoc_args: ["--lua-filter=../lua/strong.lua"]
+    pandoc_args: ["--citeproc","--lua-filter=../lua/strong.lua"]
+#biblio-style: "authoryear"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae)
 library(readr)
+library(fontawesome)
+
 ```
 
 
-# Education
+# \faIcon{university} Education
 
 ```{r}
 library(tibble)
@@ -37,14 +41,14 @@ read_csv("../Input/education.csv") %>%
   detailed_entries(Institution, Year, Where, Degree)
 ```
 
-# Work Experience
+# \faIcon{briefcase} Work Experience
 
 ```{r}
 read_csv("../Input/experience.csv") %>% 
   detailed_entries(Institution, Year, Where, Position)
 ```
 
-# Presentations
+# \faIcon{comments} Presentations
 ```{r}
 read_csv("../Input/presentation.csv") %>% 
   brief_entries(
@@ -54,13 +58,17 @@ read_csv("../Input/presentation.csv") %>%
   )
 ```
 
-# Publications
+# \faIcon*{file} Publications
 
-```{r}
+```{r results='asis'}
 library(dplyr)
 #knitr::write_bib(c("vitae", "tibble"), "packages.bib")
 
 bibliography_entries("../Input/my_publications.bib") %>%
+  #arrange(desc(issued))
   arrange(desc(issued),desc(author$family))
+
+ bold_text <- "bold"
+   cat(paste("This is a", paste0("\\textbf{", bold_text, "}"), "text."))
 ```
 

@@ -11,11 +11,12 @@ orcid: 0000-0002-1879-4553
 #linkedin: mariecurie
 date: "`r format(Sys.time(), '%B %Y')`"
 
-csl: "../apa-cv.csl"
+
 
 output:
   vitae::awesomecv:
-    pandoc_args: ["--lua-filter=../lua/strong.lua"]
+    keep_tex: true
+#    pandoc_args: ["--lua-filter=../lua/strong.lua"]
 ---
 
 ```{r setup, include=FALSE}
