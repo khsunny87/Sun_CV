@@ -17,11 +17,10 @@ latex_engine: xelatex
 csl: "../apa-cv.csl"
 #biblography: "../Input/my_publications_test.bib"
 output:
-  #vitae::awesomecv:
-  vitae::twentyseconds:
+  vitae::awesomecv:
+  #vitae::twentyseconds:
     keep_tex: true
     pandoc_args: ["--citeproc","--lua-filter=../lua/strong.lua"]
-#biblio-style: "authoryear"
 ---
 
 ```{r setup, include=FALSE}
@@ -41,7 +40,7 @@ read_csv("../Input/education.csv") %>%
   detailed_entries(Institution, Year, Where, Degree)
 ```
 
-# \faIcon{briefcase} Work Experience
+# \faIcon{briefcase}   Work Experience
 
 ```{r}
 read_csv("../Input/experience.csv") %>% 
@@ -64,7 +63,7 @@ read_csv("../Input/presentation.csv") %>%
 library(dplyr)
 #knitr::write_bib(c("vitae", "tibble"), "packages.bib")
 
-bibliography_entries("../Input/my_publications.bib") %>%
+bibliography_entries("../Input/my_publications_test.bib") %>%
   #arrange(desc(issued))
   arrange(desc(issued),desc(author$family))
 
