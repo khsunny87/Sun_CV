@@ -1,21 +1,21 @@
 ---
-name: Hongsun
-surname: Kim
-position: "Clinical Fellow"
-pronouns: he/his/him
-address: "Cardiovascular Surgery Department, Mayo Clinic, Rochester"
-profilepic: "Hongsun Kim.jpg"
-phone: +1 213 563 1989
-email: "kim.hongsun@mayo.edu / yoursunny@gmail.com"
-orcid: 0000-0002-1879-4553
-#linkedin: mariecurie
+name: Marie
+surname: Curie
+position: "Professor"
+address: "School of Physics & Chemistry, École Normale Supérieure"
+phone: +1 22 3333 4444
+pronouns: she/her
+profilepic: mariecurie.jpg
+www: mariecurie.com
+email: "Marie.Curie@ens.fr"
+twitter: mariecurie
+github: mariecurie
+linkedin: mariecurie
 date: "`r format(Sys.time(), '%B %Y')`"
-
-csl: "../apa-cv.csl"
-
-output:
-  vitae::awesomecv:
-    pandoc_args: ["--lua-filter=../lua/strong.lua"]
+aboutme: "Marie is a Polish and naturalized-French physicist and chemist who conducts pioneering research on radioactivity."
+output: 
+  vitae::twentyseconds:
+    keep_tex: true
 ---
 
 ```{r setup, include=FALSE}
@@ -38,7 +38,7 @@ tribble(
   "Informal studies", "1889-91", "Flying University", "Warsaw, Poland",
   "Master of Physics", "1893", "Sorbonne Université", "Paris, France",
   "Master of Mathematics", "1894", "Sorbonne Université", "Paris, France"
-) %>%
+) %>% 
   detailed_entries(Degree, Year, Institution, Where)
 ```
 
@@ -49,10 +49,10 @@ tribble(
   ~Year, ~Type, ~Desc,
   1903, "Physics", "Awarded for her work on radioactivity with Pierre Curie and Henri Becquerel",
   1911, "Chemistry", "Awarded for the discovery of radium and polonium"
-) %>%
+) %>% 
   brief_entries(
     glue::glue("Nobel Prize in {Type}"),
-    Year,
+    Year, 
     Desc
   )
 ```
@@ -61,8 +61,9 @@ tribble(
 
 ```{r}
 library(dplyr)
-#knitr::write_bib(c("vitae", "tibble"), "packages.bib")
+knitr::write_bib(c("vitae", "tibble"), "packages.bib")
 
-bibliography_entries("my_publications.bib") %>%
+bibliography_entries("packages.bib") %>%
   arrange(desc(author$family), issued)
 ```
+

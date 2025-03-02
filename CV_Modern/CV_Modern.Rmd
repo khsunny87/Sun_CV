@@ -12,14 +12,12 @@ email: "kim.hongsun@mayo.edu, yoursunny@gmail.com"
 researchgate: "Hongsun-Kim-2"
 orcid: 0000-0002-1879-4553
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "Cardiac Surgeon & Researcher Interest in Aortic surgery & Thoracic transplantation"
-latex_engine: xelatex
-csl: "../apa-cv.csl"
-biblography: "../Input/my_publications.bib"
-output:
-  vitae::twentyseconds:
-    keep_tex: true
-    pandoc_args: ["--lua-filter=../lua/strong.lua"]
+aboutme: "Cardiac Surgeon & Researcher \\newline  Interest in Aortic surgery & Thoracic transplantation"
+
+
+output: 
+  vitae::moderncv:
+    pandoc_args: ["--lua-filter=../lua/bold.lua"]
 ---
 
 ```{r setup, include=FALSE}
@@ -28,20 +26,19 @@ library(vitae)
 library(readr)
 ```
 
-
 # Education
 
 ```{r}
 library(tibble)
 read_csv("../Input/education.csv") %>% 
-  detailed_entries(Institution, Year, Where, Degree)
+  detailed_entries(Degree, Year, Institution, Where)
 ```
 
 # Work Experience
 
 ```{r}
 read_csv("../Input/experience.csv") %>% 
-  detailed_entries(Institution, Year, Where, Position)
+  detailed_entries(Position, Year, Institution, Where)
 ```
 
 # Presentations
