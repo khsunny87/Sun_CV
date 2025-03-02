@@ -1,4 +1,5 @@
 ---
+docname: "Curriculum Vitae"
 name: Hongsun
 surname: Kim
 position: "Clinical Fellow"
@@ -11,8 +12,10 @@ email: "kim.hongsun@mayo.edu, yoursunny@gmail.com"
 researchgate: "Hongsun-Kim-2"
 orcid: 0000-0002-1879-4553
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "Cardiovascular surgeon. Interest in Aortic surgery & Thoracic transplantation"
-output: vitae::twentyseconds
+aboutme: "Cardiac Surgeon & Researcher. \newline dumb \newline Interest in Aortic surgery & Thoracic transplantation"
+#output: vitae::twentyseconds
+
+output: vitae::moderncv
 latex_engine: xelatex
 #header-includes:
 #  - \usepackage{fontawesome5}
