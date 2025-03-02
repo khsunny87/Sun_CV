@@ -1,0 +1,76 @@
+---
+name: Hongsun
+surname: Kim
+position: "Clinical Fellow"
+pronouns: he/his/him
+address: "Cardiovascular Surgery Department, Mayo Clinic, Rochester, MN"
+profilepic: "Hongsun Kim.jpg"
+phone: +1 213 563 1989
+orcid: 0000-0002-1879-4553
+email: "kim.hongsun@mayo.edu, yoursunny@gmail.com"
+#linkedin: "mariecurie"
+
+
+date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "Cardiovascular surgeon"
+output: vitae::twentyseconds
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Medical Doctor", "2006-2012", "College of Medicine, Sungkyunkwan University", "Seoul, Korea",
+  "Statistics and Data Science", "2018-", "Korean National Open University", "",
+  "Master of Medicine", "2015-2023", "Graduate School of Sungkyunkwan University", "Seoul, Korea"
+) %>% 
+  detailed_entries(Institution, Year, Where, Degree)
+```
+
+# Work Experience
+
+```{r}
+tribble(
+  ~ Institution, ~ Year, ~ Where, ~ Position,
+  "Samsung Medical Center","2012-2013","Seoul, Korea", "Intern",
+  "Samsung Medical Center","2013-2017","Seoul, Korea", "Resident, Department of Thoracic and Cardiovascular Surgery",
+  "Masan National Tubersulosis Hospital","2017-2020","Seoul, Korea", "Public Health Physician",
+  "Samsung Medical Center","2020-2023.2","Seoul, Korea", "Cliical Fellow, Division of Cardiovascular Surgery",
+  "Samsung Medical Center","2023.2-2023.7","Seoul, Korea", "Cliical Professor, Division of Cardiovascular Surgery",
+  "Mayo Clinic","2023.7-","MN, USA", "Cliical Fellow, Cardiovascular Surgery"
+) %>% 
+  detailed_entries(Institution, Year, Where, Position)
+```
+
+# Presentations
+```{r}
+tribble(
+  ~Year, ~Title, ~Desc,
+  "2022.10", "Repair Versus Replacement in Active Native Mitral Valve Endocarditis: A Propensity Score-Matched Study", "The 36th European Association for Cardio-Thoracic Surgery Annual Meeting, October 2022, Milan, Italy",
+  "2024.4", "Impact of the Grade and Jet Direction of Residual Aortic Regurgitation following Valve-sparing Root Replacement","The 104th American Association for Thoracic Surgery Annual Meeting, April 2024, Toronto, Canada"
+) %>%
+  brief_entries(
+    Title,
+    Year,
+    Desc
+  )
+```
+
+# Publications
+
+```{r}
+library(dplyr)
+#knitr::write_bib(c("vitae", "tibble"), "packages.bib")
+
+bibliography_entries("my_publications.bib") %>%
+  arrange(desc(author$family), issued)
+```
+

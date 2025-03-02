@@ -1,15 +1,14 @@
 ---
-name: Marie
-surname: Curie
-position: "Professor"
-pronouns: she/her
-address: "School of Physics & Chemistry, École Normale Supérieure"
-phone: +1 22 3333 4444
-www: mariecurie.com
-email: "Marie.Curie@ens.fr"
-twitter: mariecurie
-github: mariecurie
-linkedin: mariecurie
+name: Hongsun
+surname: Kim
+position: "Clinical Fellow"
+pronouns: he/his/him
+address: "Cardiovascular Surgery Department, Mayo Clinic, Rochester"
+profilepic: "Hongsun Kim.jpg"
+phone: +1 213 563 1989
+email: "kim.hongsun@mayo.edu / yoursunny@gmail.com"
+orcid: 0000-0002-1879-4553
+#linkedin: mariecurie
 date: "`r format(Sys.time(), '%B %Y')`"
 output:
   vitae::awesomecv:
@@ -59,8 +58,8 @@ tribble(
 
 ```{r}
 library(dplyr)
-knitr::write_bib(c("vitae", "tibble"), "packages.bib")
+#knitr::write_bib(c("vitae", "tibble"), "packages.bib")
 
-bibliography_entries("packages.bib") %>%
+bibliography_entries("my_publications.bib") %>%
   arrange(desc(author$family), issued)
 ```
