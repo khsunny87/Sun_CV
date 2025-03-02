@@ -56,9 +56,9 @@ read_csv("../Input/experience.csv") %>%
 \faIcon{comments} Presentations
 ============================
 
-```{r}
+```{r, results='asis'}
 read_csv("../Input/presentation.csv") %>% 
-  detailed_entries(Conference,Year,Title)
+  detailed_entries(what=Conference,when=Year,with=Title)
 ```
 
 \faIcon*{file} Publications
