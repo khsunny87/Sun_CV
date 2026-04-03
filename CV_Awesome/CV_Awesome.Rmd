@@ -4,7 +4,7 @@ name: Hongsun
 surname: Kim
 position: "Clinical Fellow"
 #pronouns: he/his/him
-address: "Department of Cardiovascular Surgery, Mayo Clinic, Rochester, MN"
+address: "Department of Cardiothoracic Surgery, Mayo Clinic, Jacksonville, FL"
 profilepic: "../Input/Hongsun Kim.jpg"
 phone: +1 213 563 1989
 linkedin: "hongsun-kim"
