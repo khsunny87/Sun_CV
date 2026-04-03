@@ -54,3 +54,4 @@ rsconnect/
 
 #Mac
 **/._*
+.DS_Store
