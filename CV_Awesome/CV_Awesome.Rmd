@@ -41,7 +41,7 @@ library(fontawesome)
 
 ```{r}
 library(tibble)
-read_csv("../Input/education.csv") %>% 
+read_csv("../Input/education.csv", col_types = "ccc") %>% 
   detailed_entries(Degree, Year, Institution, Where)
 ```
 
@@ -49,15 +49,29 @@ read_csv("../Input/education.csv") %>%
 ============================
 
 ```{r}
-read_csv("../Input/experience.csv") %>% 
+read_csv("../Input/experience.csv", col_types = "ccc") %>% 
   detailed_entries(Position, Year, Institution,Where)
 ```
+
+\faIcon{trophy} Honors and Awards
+============================
+
+```{r}
+read_csv("../Input/award.csv", col_types = "ccc") %>% 
+  detailed_entries(with=Title, when=Year, what=Where)
+```
+
+\faIcon{users} Professional Memberships
+============================
+**Member, Korean Society for Thoracic and Cardiovascular Surgery**
+
+
 
 \faIcon{comments} Presentations
 ============================
 
 ```{r, results='asis'}
-read_csv("../Input/presentation.csv") %>% 
+read_csv("../Input/presentation.csv", col_types = "ccc") %>% 
   detailed_entries(what=Conference,when=Year,with=Title)
 ```
 
